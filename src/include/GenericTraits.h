@@ -39,29 +39,29 @@ Destructor get_prototype_destructor(char *type_name);
 void add_prototype_ctor_dtor(char *type_name, Constructor ctor,
                              Destructor dtor);
 
-#define DECLARE_STRUCT(Name, Internal)                                         \
-  typedef struct Name Internal Name;                                           \
-  void *new_##Name(char *);                                                    \
-  void dump_##Name(void *, FILE *fp);                                          \
-  int cmp_##Name(void *, void *);                                              \
-  void drop_##Name(void *);                                                    \
+#define DECLARE_STRUCT(Object, Internal)                                       \
+  typedef struct Object Internal Object;                                       \
+  void *new_##Object(char *);                                                  \
+  void dump_##Object(void *, FILE *fp);                                        \
+  int cmp_##Object(void *, void *);                                            \
+  void drop_##Object(void *);                                                  \
                                                                                \
-  void *new_##Name##_prototype();                                              \
-  void drop_##Name##_prototype(void *);                                        \
+  void *new_##Object##_prototype();                                            \
+  void drop_##Object##_prototype(void *);                                      \
                                                                                \
-  void __attribute__((constructor)) register_##Name();
+  void __attribute__((constructor)) register_##Object();
 
-#define DEFINE_STRUCT(Name)                                                    \
-  void drop_ #Name(void *this) { /* Your code here to free the instance */     \
+#define DEFINE_STRUCT(Object)                                                  \
+  void drop_##Object(void *this) { /* Your code here to free the instance. */  \
   }                                                                            \
-  void new_##Name##_prototype() {                                              \
-    /* Your code here to create a new prototype */                             \
+  void *new_##Object##_prototype(void *this) {                                 \
+    /* Your code here to create a prototype of the object. */                  \
   }                                                                            \
-  void *drop_##Name##_prototype(void *this) {                                  \
-    /* Your code here to free the prototype */                                 \
+  void drop_##Object##_prototype(void *this) {                                 \
+    /* Your code here to free a prototype of the object. */                    \
   }                                                                            \
-  void __attribute__((constructor)) register_##Name() {                        \
-    /* Your code here to register ctor and  dtor */                            \
+  void __attribute__((constructor)) register_##Object() {                      \
+    /* Your code here to register an object. */                                \
   }
 
 #endif
