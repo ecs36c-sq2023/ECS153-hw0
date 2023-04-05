@@ -246,7 +246,7 @@ Use one of the following options to setup your environment.
 
   ```bash
   git clone https://github.com/ecs36c-sq2023/ECS153-hw0 ECS153-hw0
-  cd ./ECS153-hw0
+  cd ./ECS153-hw0/src
   mkdir build
   cd build
   cmake ..
