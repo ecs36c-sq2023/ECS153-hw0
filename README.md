@@ -87,22 +87,27 @@ You should sort the array IN PLACE, in descending order.
 Because this algorithm is so basic (also so openly available), you won't get any credit for finishing this. 
 We have already given you declarations, telling you that there are `n` objects, each object satisfies `GenericTraits` in `quick_sort.h`.
 
-Let's start with a basic int32_t wrapper called Int.
+Then, let's work with a basic `int32_t` wrapper called `Int`. 
 - `new` will convert a line of string to an integer. The input is guaranteed to be valid.
 - `dump` should output the hexadecimal format that starts with `0x`.
 
 Once you finished `Int`, let's try to put them together in `main`!
 You will read from a file, construct objects from the string you read, call `quick_sort` and print the objects to the file.
+You will get 10% if you get everything up till here right.
 
-When you're finished with `Int`, you can move on to the more complicated `Human`.
+When you're finished with `Int`, you can move on to the more complicated `Human`. 
 `Human` has a `name`, which is a bunch of characters WITHOUT SPACES. 
 The input may contain extra spaces at the end, which you should remove. 
 The input may also contain some words concatenated together by spaces, but you should only use the first word. You can use `strcmp` to compare the strings.
+You will get 20% if you finish `Human` correctly, extra 20% if your code is memory safe.
+To detect memory safety, we use AddressSanatizer (ASan) to detect memory leaks, double free, and buffer overflows.
+You can ask `CMake` to generate a `Makefile` that copmiles your code against ASan by: `cmake -DCMAKE_BUILD_TYPE=asan ..`
 
-`Student` inherits from `Human`, therefore remember that there is a field `Human human; in Student`.
+`Student` inherits from `Human`, therefore remember that there is a field `Human human;` in Student.
 Each line will have a `name` and `grade` separated by a space. `grade` is guaranteed to be an integer.
 You should sort `Student` by `grade` first. If the `grades` are equal, compare their `names` using `human`.
 When `dump`, you should put the `grade` first, then a space ` `, followed by the `name`.
+You will get 10% if you finish `Student` correctly, extra 20% if your code is memory safe.
 
 Finally, you may have realized that much of the code in the previous structs is repeated. 
 In `Rectangle`, we attempted to remove this repetition by using macros. Look into `DECLARE_STRUCT` and `DEFINE_STRUCT` in `GenericTraits`. 
@@ -110,6 +115,7 @@ Once you understand them, you should be able to declare `Rectangle` in less than
 Each line of input contains two integers separated by a space, representing `height` and `width`, respectively. When using `dump`, you should use the same format as the input. 
 `Rectangle`s are sorted based on their area. If two objects have the same area, compare their `heights`. If their `heights` are also the same, compare their `widths`.
 Your `Rectangle.h` and `Rectangle.c` will only be graded if `DECLARE_STRUCT` and `DEFINE_STRUCT` are used.
+You will get 10% if you finish `Rectangle` using the marcos we provided, and the code has no memory errors.
 
 ### Requirements
 

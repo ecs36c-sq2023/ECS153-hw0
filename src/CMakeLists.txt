@@ -9,7 +9,19 @@ project(hw0 VERSION 1.1.0)
 
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE}
+    CACHE STRING "Choose the type of build, options are: None Debug Release asan"
+    FORCE)
+# AddressSanitize
+set(CMAKE_C_FLAGS_ASAN
+    "-fsanitize=address -fno-optimize-sibling-calls -fsanitize-address-use-after-scope -fno-omit-frame-pointer -g -O1"
+    CACHE STRING "Flags used by the C compiler during AddressSanitizer builds."
+    FORCE)
+set(CMAKE_CXX_FLAGS_ASAN
+    "-fsanitize=address -fno-optimize-sibling-calls -fsanitize-address-use-after-scope -fno-omit-frame-pointer -g -O1"
+    CACHE STRING "Flags used by the C++ compiler during AddressSanitizer builds."
+    FORCE)
+
 
 include_directories(${INCLUDE_DIR})
 
