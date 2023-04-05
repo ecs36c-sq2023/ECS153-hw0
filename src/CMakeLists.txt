@@ -11,7 +11,6 @@ set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(LIB_DIR ${PROJECT_SOURCE_DIR}/lib)
 set(CMAKE_BUILD_TYPE Debug)
 
-
 include_directories(${INCLUDE_DIR})
 
 set(SOURCE_FILES main.c)

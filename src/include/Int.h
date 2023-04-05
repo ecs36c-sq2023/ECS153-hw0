@@ -14,19 +14,19 @@ typedef struct Int {
 } Int;
 
 /// Create a new `Int`
-void *new_Int(char *);
+void *new_Int(char *string);
 /// Prints `Int` to the file stream. You should print it a hex values with a
 /// "0x" prefix.
-void dump_Int(void *, FILE *fp);
+void dump_Int(void *this, FILE *fp);
 /// Compares two `Int`.
-int cmp_Int(void *, void *);
+int cmp_Int(void *this, void *that);
 /// Free this struct. Don't forget to free `GenericTraits` too.
-void drop_Int(void *);
+void drop_Int(void *this);
 
 /// Create an `Int` prototype, which only has methods without actual data.
 void *new_Int_prototype();
 /// Free the prototype.
-void drop_Int_prototype(void *);
+void drop_Int_prototype(void *this);
 
 /// Register `Int` using `add_prototype_constructor`.
 /// This function should run before main.

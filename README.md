@@ -113,9 +113,12 @@ Your `Rectangle.h` and `Rectangle.c` will only be graded if `DECLARE_STRUCT` and
 
 ### Requirements
 
-- For C and header files, you SHOULD NOT modify any code unless you see `/* Your code here ... */` or something similar.
-  - Specifically, you SHOULD NOT modify any function declarations.
-- You may modify `CMakeLists.txt` as you wish for debugging purposes.
+- For C and header files, you SHOULD NOT modify any code unless you see `/* Your code here ... */` or something similar. Specifically, you SHOULD NOT modify:
+  - Any function declarations.
+  - Any `#include`, the files have enough `#include` to write the code. Even if `main.c` doesn't include any struct definitions, with smart function pointers you can work that around.
+- You may modify `CMakeLists.txt` as you wish.
+  - Try not to change compiler settings, but you can modify it for debuggin purposes.
+  - You should remove the files you didn't finish to avoid a compiler failure.
   - Hint: This `CMakeLists.txt` is not correct. It will compile the project, but not correctly.
 
 ### Submitting your Homework
