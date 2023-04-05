@@ -96,15 +96,16 @@ You will read from a file, construct objects from the string you read, call `qui
 You will get 10% if you get everything up till here right.
 
 When you're finished with `Int`, you can move on to the more complicated `Human`. 
-`Human` has a `name`, which is a bunch of characters WITHOUT SPACES. 
-The input may contain extra spaces at the end, which you should remove. 
+`Human` has a `name`, which is a bunch of characters WITHOUT SPACES (' ') OR LINE BREAKS ('\n'). 
+The input may contain extra spaces and/or `'\n'` at the end, which you should remove. 
+`name` should not be longer than `MAX_LEN - 1`, which is 256 bytes. But there is a trailing `\0` to end the string, that means there are at most 255 characters in the `name`. Anything more than that should be removed.
 The input may also contain some words concatenated together by spaces, but you should only use the first word. You can use `strcmp` to compare the strings.
 You will get 20% if you finish `Human` correctly, extra 20% if your code is memory safe.
 To detect memory safety, we use AddressSanatizer (ASan) to detect memory leaks, double free, and buffer overflows.
 You can ask `CMake` to generate a `Makefile` that copmiles your code against ASan by: `cmake -DCMAKE_BUILD_TYPE=asan ..`
 
 `Student` inherits from `Human`, therefore remember that there is a field `Human human;` in Student.
-Each line will have a `name` and `grade` separated by a space. `grade` is guaranteed to be an integer.
+Each line will have a `name` and `grade` separated by ONE space. `grade` is guaranteed to be an integer.
 You should sort `Student` by `grade` first. If the `grades` are equal, compare their `names` using `human`.
 When `dump`, you should put the `grade` first, then a space ` `, followed by the `name`.
 You will get 10% if you finish `Student` correctly, extra 20% if your code is memory safe.
@@ -112,10 +113,11 @@ You will get 10% if you finish `Student` correctly, extra 20% if your code is me
 Finally, you may have realized that much of the code in the previous structs is repeated. 
 In `Rectangle`, we attempted to remove this repetition by using macros. Look into `DECLARE_STRUCT` and `DEFINE_STRUCT` in `GenericTraits`. 
 Once you understand them, you should be able to declare `Rectangle` in less than 5 lines in `Rectangle`.h, and the implementation of `Rectangle` should be less exhaustive. 
-Each line of input contains two integers separated by a space, representing `height` and `width`, respectively. When using `dump`, you should use the same format as the input. 
+Each line of input contains two integers separated by ONE space, representing `height` and `width`, respectively. It's guaranteed that `height` and `width` will be non-negative.
+When using `dump`, you should use the same format as the input. 
 `Rectangle`s are sorted based on their area. If two objects have the same area, compare their `heights`. If their `heights` are also the same, compare their `widths`.
 Your `Rectangle.h` and `Rectangle.c` will only be graded if `DECLARE_STRUCT` and `DEFINE_STRUCT` are used.
-You will get 10% if you finish `Rectangle` using the marcos we provided, and the code has no memory errors.
+You will get 20% if you finish `Rectangle` using the marcos we provided, and the code has no memory errors.
 
 ### Requirements
 
