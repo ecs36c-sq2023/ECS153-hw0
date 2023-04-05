@@ -1,0 +1,7 @@
+Student
+5 
+b 3
+a 3
+c 3
+Ada 1
+Peter 2

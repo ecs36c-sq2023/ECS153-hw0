@@ -1,0 +1,5 @@
+c 3
+b 3
+a 3
+Peter 2
+Ada 1
