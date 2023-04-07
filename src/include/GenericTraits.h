@@ -54,7 +54,7 @@ void add_prototype_ctor_dtor(char *type_name, Constructor ctor,
 #define DEFINE_STRUCT(Object)                                                  \
   void drop_##Object(void *this) { /* Your code here to free the instance. */  \
   }                                                                            \
-  void *new_##Object##_prototype(void *this) {                                 \
+  void *new_##Object##_prototype() {                                           \
     /* Your code here to create a prototype of the object. */                  \
   }                                                                            \
   void drop_##Object##_prototype(void *this) {                                 \

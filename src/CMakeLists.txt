@@ -14,11 +14,11 @@ set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE}
     FORCE)
 # AddressSanitize
 set(CMAKE_C_FLAGS_ASAN
-    "-fsanitize=address -fno-optimize-sibling-calls -fsanitize-address-use-after-scope -fno-omit-frame-pointer -g -O1"
+    "-fsanitize=address -fno-optimize-sibling-calls -fsanitize-address-use-after-scope -fno-omit-frame-pointer -g -O1 -Wall -Wextra -Wpedantic -Werror"
     CACHE STRING "Flags used by the C compiler during AddressSanitizer builds."
     FORCE)
 set(CMAKE_CXX_FLAGS_ASAN
-    "-fsanitize=address -fno-optimize-sibling-calls -fsanitize-address-use-after-scope -fno-omit-frame-pointer -g -O1"
+    "-fsanitize=address -fno-optimize-sibling-calls -fsanitize-address-use-after-scope -fno-omit-frame-pointer -g -O1 -Wall -Wextra -Wpedantic -Werror"
     CACHE STRING "Flags used by the C++ compiler during AddressSanitizer builds."
     FORCE)
 
@@ -28,10 +28,10 @@ include_directories(${INCLUDE_DIR})
 set(SOURCE_FILES main.c)
 add_executable(Main ${SOURCE_FILES})
 
-add_library(QuickSort
+add_library(QuickSort SHARED
     ${LIB_DIR}/quick_sort.c
 )
-add_library(GenericTraits
+add_library(GenericTraits SHARED
     ${LIB_DIR}/GenericTraits.c
     ${LIB_DIR}/Int.c
     ${LIB_DIR}/Human.c
@@ -39,4 +39,4 @@ add_library(GenericTraits
     ${LIB_DIR}/Rectangle.c
 )
 
-target_link_libraries(Main QuickSort GenericTraits)
+target_link_libraries(Main QuickSort GenericTraits -fsanitize=address)

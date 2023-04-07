@@ -27,14 +27,15 @@ To sort an array of objects, all you need to know is how to compare two objects.
 
 Some programming languages can provide for such needs. For example, `Trait` in Rust and `Interface` in Java. 
 Instead of defining data fields, they only contain methods that you can use. 
-An algorithm can declare the Trait it needs for it to work. Any struct/class that satisfies a `Trait` or `Interface` can then be automatically adapted to this algorithm.
+An algorithm can declare the `Trait` it needs ([Trait Objects](https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/trait-objects.html) in Rust). 
+Any struct/class that satisfies a `Trait` or `Interface` can then be automatically adapted to this algorithm.
 
 But C doesn't have such design...
 
 Really?
 C is a powerful language famous for running the world. 
 Many high-level features in OOP can be implemented in C... if you are good enough with pointers. 
-If you still don't believe it, just think about how inheritance is implemented in C++: Ah yes, v-table!
+If you still don't believe it, just think about how inheritance is implemented in C++: Ah yes, [v-table](https://en.wikipedia.org/wiki/Virtual_method_table)!
 
 All we need is something similar to a v-table. 
 Imagine all structs have a bunch of function pointers. 
