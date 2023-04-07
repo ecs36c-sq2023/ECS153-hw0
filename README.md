@@ -63,7 +63,7 @@ You can think of "Traits" as contracts, they provide a guarantee to your sorting
   - `cmp`: Compares two instances, returns positive number if larger, negative number is smaller, 0 if equal.
   - `drop`: Free the memory allocated to this instance.
 - `Int.h`, `Student.h`, `Human.h`, `Rectangle.h` are four structs you need to implement.
-  - `Int` is nothing but a wrapper over `int32_t`. `Int` is sorted based on its value.
+  - `Int` is nothing but a wrapper over `int32_t`. `Int` is sorted based on its value. `Int.h` has an example definition.
   - `Human` only have one field `name`, which should be a string. `Human` is sorted based on its name.
   - `Student` inherits from `Human`, it has an extra field called `grade`. 
   - `Rectangle` contains some macro tricks.
@@ -88,7 +88,7 @@ You should sort the array IN PLACE, in descending order.
 Because this algorithm is so basic (also so openly available), you won't get any credit for finishing this. 
 We have already given you declarations, telling you that there are `n` objects, each object satisfies `GenericTraits` in `quick_sort.h`.
 
-Then, let's work with a basic `int32_t` wrapper called `Int`. 
+Then, let's work with a basic `int32_t` wrapper called `Int`. We have provided an example definition of `Int` in `Int.h`, you can use it.
 - `new` will convert a line of string to an integer. The input is guaranteed to be valid.
 - `dump` should output the hexadecimal format that starts with `0x`.
 
@@ -128,7 +128,6 @@ You will get 20% if you finish `Rectangle` using the marcos we provided, and the
 - You may modify `CMakeLists.txt` as you wish.
   - Try not to change compiler settings, but you can modify it for debuggin purposes.
   - You should remove the files you didn't finish to avoid a compiler failure.
-  - Hint: This `CMakeLists.txt` is not correct. It will compile the project, but not correctly.
 
 ### Submitting your Homework
 

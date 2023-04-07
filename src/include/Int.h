@@ -10,7 +10,9 @@
 /// This is the first struct you should implement to get yourself familar with
 /// function pointers.
 typedef struct Int {
-  /* Your code here to declare the struct */
+  GenericTraits *impl;
+
+  int i;
 } Int;
 
 /// Create a new `Int`
