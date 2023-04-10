@@ -22,7 +22,7 @@ void *new_Int(char *string);
 void dump_Int(void *this, FILE *fp);
 /// Compares two `Int`.
 int cmp_Int(void *this, void *that);
-/// Free this struct. Don't forget to free `GenericTraits` too.
+/// Free this struct.
 void drop_Int(void *this);
 
 /// Create an `Int` prototype, which only has methods without actual data.
