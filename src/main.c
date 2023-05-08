@@ -32,8 +32,8 @@ int main(int argc, char const *argv[]) {
   int n = 0;
   (void)!fscanf(input, "%d\n", &n);
 
-  // Get the proto type of the object.
-  /* Your code here to request for the prototype */
+  // Get the constructor of the object.
+  /* Your code here to request for the constructor */
 
   // Read the following n objects from the input.
   // Initialize them using prototype.

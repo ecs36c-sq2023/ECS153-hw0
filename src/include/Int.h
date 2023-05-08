@@ -19,18 +19,13 @@ typedef struct Int {
 void *new_Int(char *string);
 /// Prints `Int` to the file stream. You should print it a hex values with a
 /// "0x" prefix.
-void dump_Int(void *this, FILE *fp);
+void dump_Int(void *self, FILE *fp);
 /// Compares two `Int`.
-int cmp_Int(void *this, void *that);
+int cmp_Int(void *self, void *other);
 /// Free this struct.
-void drop_Int(void *this);
+void drop_Int(void *self);
 
-/// Create an `Int` prototype, which only has methods without actual data.
-void *new_Int_prototype();
-/// Free the prototype.
-void drop_Int_prototype(void *this);
-
-/// Register `Int` using `add_prototype_constructor`.
+/// Register `Int` using `add_ctor_dtor`.
 /// This function should run before main.
 /// You may want to look into attributes and constructor/destructor.
 void __attribute__((constructor)) register_Int();

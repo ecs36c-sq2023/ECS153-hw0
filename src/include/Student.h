@@ -11,12 +11,10 @@ typedef struct Student {
 } Student;
 
 void *new_Student(char *);
-void dump_Student(void *, FILE *fp);
-int cmp_Student(void *, void *);
-void drop_Student(void *);
+void dump_Student(void *self, FILE *fp);
+int cmp_Student(void *self, void *other);
+void drop_Student(void *self);
 
-void *new_Student_prototype();
-void drop_Student_prototype(void *);
 void __attribute__((constructor)) register_Student();
 
 #endif
