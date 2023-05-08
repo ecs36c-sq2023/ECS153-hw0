@@ -1,6 +1,6 @@
 # Homework 0
 
-> Due: 04-20-2023 11:59:59 PM
+> Due: 06-09-2023 11:59:59 PM
 
 The goal of this homework is for you to
 
@@ -106,7 +106,7 @@ You will get 20% if you finish `Human` correctly, extra 20% if your code is memo
 To detect memory safety, we use AddressSanatizer (ASan) to detect memory leaks, double free, and buffer overflows.
 You can ask `CMake` to generate a `Makefile` that copmiles your code against ASan by: `cmake -DCMAKE_BUILD_TYPE=asan ..`
 
-`Student` inherits from `Human`, therefore remember that there is a field `Human human;` in Student.
+`Student` inherits from `Human`.
 Each line will have a `name` and `grade` separated by ONE space. `grade` is guaranteed to be an integer.
 You should sort `Student` by `grade` first. If the `grades` are equal, compare their `names` using `human`.
 When `dump`, you should put the `grade` first, then a space ` `, followed by the `name`.

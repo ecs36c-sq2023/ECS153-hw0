@@ -26,11 +26,11 @@ int main(int argc, char const *argv[]) {
   // Read the type of the object.
   char type[MAX_LEN];
   memset(type, 0, MAX_LEN);
-  fscanf(input, "%s\n", type);
+  (void)!fscanf(input, "%s\n", type);
 
   // read the number of objects.
   int n = 0;
-  fscanf(input, "%d\n", &n);
+  (void)!fscanf(input, "%d\n", &n);
 
   // Get the proto type of the object.
   /* Your code here to request for the prototype */
@@ -41,7 +41,7 @@ int main(int argc, char const *argv[]) {
   char tmp[MAX_LEN];
   for (int i = 0; i < n; i++) {
     memset(tmp, 0, MAX_LEN);
-    fgets(tmp, MAX_LEN, input);
+    (void)!fgets(tmp, MAX_LEN, input);
     /* Your code here to initialize the objects */
   }
 
