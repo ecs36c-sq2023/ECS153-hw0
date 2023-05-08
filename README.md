@@ -14,6 +14,7 @@ The goal of this homework is for you to
 1. [Homework Spec](#homework-spec)
 2. [Setup Dev Env & Run/Debug Your Program](#setup-dev-env--rundebug-your-program)
 3. [CMakeFiles](#cmakefiles)
+4. [Submission](#submission)
 
 ## Homework Spec
 
@@ -279,3 +280,8 @@ computers from home and how to copy files to/from the CSIF computers using your
 personal computer, can be found at
 [http://csifdocs.cs.ucdavis.edu/about-us](http://csifdocs.cs.ucdavis.edu/about-us)
 csif-general-faq.
+
+# Submission
+
+To submit your homework, you need to run `./generate_submission.sh` to generate a zip file. Make sure that the zip you got contains your code in it.
+Then submit it to gradescope.
