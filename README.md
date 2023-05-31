@@ -109,7 +109,7 @@ You can ask `CMake` to generate a `Makefile` that copmiles your code against ASa
 `Student` inherits from `Human`.
 Each line will have a `name` and `grade` separated by ONE space. `grade` is guaranteed to be an integer.
 You should sort `Student` by `grade` first. If the `grades` are equal, compare their `names` using `human`.
-When `dump`, you should put the `grade` first, then a space ` `, followed by the `name`.
+When `dump`, you should put the `name` first, then a space ` `, followed by the `grade`.
 You will get 10% if you finish `Student` correctly, extra 20% if your code is memory safe.
 
 Finally, you may have realized that much of the code in the previous structs is repeated. 
